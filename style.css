@@ -1,0 +1,68 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      background-image: url(./img/px1366710-image-kwvxxeqp.jpg);
+      background-size: cover;
+    }
+    .box {
+      width: 600px;
+      height: 600px;
+      border: 1px solid white;
+      margin: 100px auto;
+      position: relative;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      transform: perspective(1500px) rotateX(60deg);
+    }
+    .box > * {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateX(100deg);
+      border-radius: 50%;
+    }
+    .sun {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(201, 201, 48);
+      box-shadow: 0 0 70px 10px rgb(160, 137, 8);
+    }
+    .earth {
+      width: 160px;
+      height: 160px;
+      /* transition: 10s linear; */
+      left: 0;
+      transform-style: preserve-3d;
+    }
+    .earth > div {
+      width: 100%;
+      height: 100%;
+      transition: 20s linear;
+      border-radius: 50%;
+      transform-origin: 380px 50%;
+      transform-style: preserve-3d;
+      /* background-color: black; */
+    }
+    .earth > div > div {
+      width: 100%;
+      height: 100%;
+      /* background-color: red; */
+      border-radius: 50%;
+      background-image: url(./img/earth2.png);
+      background-size: cover;
+      transition: 20s linear;
+      box-shadow: 0 0 30px 1px gray;
+      background-position: -10px 0;
+    }
+    .box:hover .earth > div {
+      transform: rotateY(360deg);
+    }
+    .box:hover .earth > div > div {
+      transform: rotateY(-360deg);
+      background-position: -100px 0;
+    }
